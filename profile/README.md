@@ -1,4 +1,4 @@
-<h1 align="center">The all-in-one Performance Platform for Building Applications</h1>
+<h1 align="center">The All-in-One Performance Platform for Building Applications</h1>
 
 <p align="center">
 	<a href="https://harperdbsystems.dev">
@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-Harper is an open-source Node.js performance platform that unifies database, cache, application, and messaging layers into one in-memory process. Build faster. Operate simpler. Scale globally.
+Harper is an open-source Node.js performance platform that unifies database, cache, application, and messaging layers into one in-memory process. Build Efficiently. Deliver Lightning Performance for Data-Intensive Apps. Scale Globally.
 </p>
 
 <p align="center">
