@@ -24,10 +24,10 @@ Harper is an open-source Node.js performance platform that unifies database, cac
 
 ---
 
-## Source Available vs Open Source
+## Open Source vs Source Available
 
 At Harper, we take special care to distinguish between **open source** and **source available** software.
 
-**Open source** software must be licensed under an OSI-approved license (we use [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) as the default), allowing anyone to use, modify, and distribute the software freely.
+**Open source** software must be licensed under an OSI-approved license (we use [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) as the default), allowing anyone to use, modify, and distribute the software freely. The core, [`@HarperFast/Harper`](https://github.com/HarperDB/Harper) repo is open source along with many additional Harper plugins, applications, examples, tooling, and more.
 
-**Source available** software, on the other hand, allows users to view the source code but may have restrictions on its use, modification, or distribution. By default, we use the [Elastic License 2.0](https://www.elastic.co/licensing/elastic-license) for source available projects.
+**Source available** software, on the other hand, allows users to view the source code but may have restrictions on its use, modification, or distribution. By default, we use the [Elastic License 2.0](https://www.elastic.co/licensing/elastic-license) for source available projects. Certain Harper products, such as the Harper Replication Plugin and Harper Fabric are source available. While a majority of our projects are open source, always pay special attention to the license within any repository or distribution to understand the specific terms and conditions that apply.
