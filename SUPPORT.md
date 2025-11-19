@@ -8,7 +8,7 @@ If you encounter a bug, please file an issue directly in the respective reposito
 
 For general questions, help requests, and community discussions, please join our Discord community:
 
-**https://discord.gg/VzZuaw3Xay**
+**https://harper.fast/discord**
 
 ## Code of Conduct Violations
 
