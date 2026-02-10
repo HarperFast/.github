@@ -44,7 +44,7 @@ Once the package exists on NPM, you can configure the repository as a trusted pu
 1. Visit `https://www.npmjs.com/package/{packageName}/access`
 2. Add or edit a **Trusted Publisher**.
 3. **Publisher:** GitHub Actions
-4. **Organization or user:** `HarperFast` (or the appropriate owner)
+4. **Organization or user:** `HarperFast`
 5. **Repo:** The exact name of your repository.
 6. **Workflow filename:** The exact name of your release workflow file (e.g., `release.yaml`). This is case-sensitive and must be located in the `.github/workflows/` folder.
 7. **Environment name:** Leave blank unless you are specifically using GitHub Environments.
