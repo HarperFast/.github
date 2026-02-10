@@ -1,10 +1,10 @@
-# NPM Trusted Publishing & Provenance
+# npm Trusted Publishing & Provenance
 
-This document outlines how to enable NPM trusted publishing and provenance for HarperFast repositories. This allows for more secure publishing eliminating the need for long-lived NPM tokens in GitHub Secrets.
+This document outlines how to enable npm trusted publishing and provenance for HarperFast repositories. This allows for more secure publishing eliminating the need for long-lived npm tokens in GitHub Secrets.
 
 ## 1. Update GitHub Release Workflow
 
-Add the following permissions to your GitHub release workflow (usually in `.github/workflows/release.yaml`). These are required for `semantic-release` to create GitHub releases and publish to NPM.
+Add the following permissions to your GitHub release workflow (usually in `.github/workflows/release.yaml`). These are required for `semantic-release` to create GitHub releases and publish to npm.
 
 ```yaml
 permissions:
@@ -14,20 +14,20 @@ permissions:
   id-token: write
 ```
 
-> **Note:** The `id-token: write` permission is specifically required for NPM provenance and trusted publishing.
+> **Note:** The `id-token: write` permission is specifically required for npm provenance and trusted publishing.
 
 ### Adjust the Publish Step
 
-Update your NPM publish step to include the `--provenance` flag:
+Update your npm publish step to include the `--provenance` flag:
 
 ```yaml
-- name: Publish to NPM
+- name: Publish to npm
   run: npm publish --provenance
 ```
 
 ## 2. Initial Manual Publication
 
-If the package has never been published to NPM before, you must manually publish it once from your local machine.
+If the package has never been published to npm before, you must manually publish it once from your local machine.
 
 For `@harperfast` scoped packages, use:
 
@@ -35,11 +35,11 @@ For `@harperfast` scoped packages, use:
 npm publish --access public
 ```
 
-This initial manual publish adds the package to NPM, allowing you to then configure it for trusted publishing.
+This initial manual publish adds the package to npm, allowing you to then configure it for trusted publishing.
 
-## 3. Configure NPM Trusted Publisher
+## 3. Configure npm Trusted Publisher
 
-Once the package exists on NPM, you can configure the repository as a trusted publisher:
+Once the package exists on npm, you can configure the repository as a trusted publisher:
 
 1. Visit `https://www.npmjs.com/package/{packageName}/access`
 2. Add or edit a **Trusted Publisher**.
@@ -51,7 +51,7 @@ Once the package exists on NPM, you can configure the repository as a trusted pu
 
 ## 4. Restrict Publishing Access
 
-While you're in NPM access settings, also disallow tokens:
+While you're in npm access settings, also disallow tokens:
 
 > Require two-factor authentication and disallow tokens (recommended)
 
@@ -59,7 +59,7 @@ Remember to hit save!
 
 ## 5. Using Semantic Release (Optional)
 
-HarperFast projects often use `semantic-release` to automate the entire package release workflow, including determining the next version number, generating release notes, and publishing to NPM.
+HarperFast projects often use `semantic-release` to automate the entire package release workflow, including determining the next version number, generating release notes, and publishing to npm.
 
 ### Configuration
 
@@ -125,7 +125,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-      - name: Publish to NPM
+      - name: Publish to npm
         run: npm publish --provenance
 ```
 
