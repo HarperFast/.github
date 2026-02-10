@@ -57,6 +57,78 @@ While you're in NPM access settings, also disallow tokens:
 
 Remember to hit save!
 
+## 5. Using Semantic Release (Optional)
+
+HarperFast projects often use `semantic-release` to automate the entire package release workflow, including determining the next version number, generating release notes, and publishing to NPM.
+
+### Configuration
+
+You can configure `semantic-release` using a `.releaserc.json` file or a `release.config.js` file in your repository root.
+
+**Example `.releaserc.json`:**
+
+```json
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/npm", {"npmPublish": false}],
+    "@semantic-release/github"
+  ]
+}
+```
+
+### Required Dependencies
+
+Ensure you have the following devDependencies in your `package.json`:
+
+```bash
+npm install --save-dev semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/npm @semantic-release/github
+```
+
+### GitHub Actions Integration
+
+When using `semantic-release`, your publish step in GitHub Actions might look like this:
+
+```yaml
+jobs:
+  release:
+    name: Release
+    environment: Release
+    # Ensure releases run only when code reaches main via GitHub Merge Queue, or when manually dispatched
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          registry-url: 'https://registry.npmjs.org'
+      - name: Update npm
+        run: npm install -g npm@latest
+      - name: Install dependencies
+        run: npm ci
+      - name: Check lint
+        run: npm run lint
+      - name: Check format
+        run: npm run format
+      - name: Run unit tests
+        run: npm test
+      - name: Semantic Release
+        if: ${{ github.event_name == 'push' }}
+        uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+      - name: Publish to NPM
+        run: npm publish --provenance
+```
+
 ## Example
 
 For a reference implementation, see the [hairper release workflow](https://github.com/HarperFast/hairper/blob/main/.github/workflows/release.yaml).
