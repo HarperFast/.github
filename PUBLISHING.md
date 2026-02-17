@@ -4,7 +4,7 @@ This document outlines how to enable npm trusted publishing and provenance for H
 
 ## 1. Update GitHub Release Workflow
 
-Add the following permissions to your GitHub release workflow (usually in `.github/workflows/release.yaml`). These are required for `semantic-release` to create GitHub releases and publish to npm.
+Add the following permissions to your GitHub release workflow (usually in `.github/workflows/release.yaml`). These are required to properly allow the workflow to create GitHub releases and publish to npm.
 
 ```yaml
 permissions:
@@ -57,11 +57,16 @@ While you're in npm access settings, also disallow tokens:
 
 Remember to hit save!
 
-## 5. Using Semantic Release (Optional)
+## 5. Increment your package versions
+
+I'll mention two options for configuring version increments:
+
+- **Manual Increment:** Manually update the version number in your `package.json` file before publishing.
+- **Automated Increment with Semantic Release:** Use `semantic-release` to automatically determine and update the version number based on commit messages.
 
 HarperFast projects often use `semantic-release` to automate the entire package release workflow, including determining the next version number, generating release notes, and publishing to npm.
 
-### Configuration
+### Semantic Release Configuration
 
 You can configure `semantic-release` using a `.releaserc.json` file or a `release.config.js` file in your repository root.
 
@@ -131,4 +136,4 @@ jobs:
 
 ## Example
 
-For a reference implementation, see the [hairper release workflow](https://github.com/HarperFast/hairper/blob/main/.github/workflows/release.yaml).
+For a reference implementation, see the [harper-agent release workflow](https://github.com/HarperFast/harper-agent/blob/main/.github/workflows/release.yaml).
