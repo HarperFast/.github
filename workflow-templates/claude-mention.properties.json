@@ -1,0 +1,6 @@
+{
+  "name": "Claude Mention Handler",
+  "description": "Respond to @claude mentions in PR or issue comments. Claude can read context, edit code, push commits, open PRs. Thin caller of HarperFast/ai-review-prompts.",
+  "iconName": "blank",
+  "categories": ["Continuous Integration"]
+}

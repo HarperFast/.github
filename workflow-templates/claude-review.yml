@@ -1,0 +1,52 @@
+name: Claude PR Review
+
+# Thin caller of HarperFast/ai-review-prompts' `_claude-review.yml`.
+# Posts inline findings + a concise top-level summary on every PR.
+# Per-repo customization: review-layers + repo-specific-checks below.
+#
+# Per-repo setup:
+#   1. Configure secrets:
+#      - HARPERFAST_AI_CLIENT_ID
+#      - HARPERFAST_AI_APP_PRIVATE_KEY
+#      - ANTHROPIC_API_KEY
+#      - AI_REVIEW_LOG_TOKEN  (optional; threads run notes into a per-PR
+#                              issue in HarperFast/ai-review-log)
+#   2. Pair with `claude-mention.yml`, `claude-issue-to-pr.yml`, and
+#      `validate-caller-workflows.yml` from this same template set.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    uses: HarperFast/ai-review-prompts/.github/workflows/_claude-review.yml@11872cb1cc2d0e90659659ade6d8ddbbdfbf1d05 # main 2026-05-06
+    with:
+      # Same SHA as the `uses:` ref above. The reusable uses this to
+      # check out HarperFast/ai-review-prompts (layer files + bash
+      # scripts) at the same ref as the workflow logic itself.
+      ai-review-prompts-ref: 11872cb1cc2d0e90659659ade6d8ddbbdfbf1d05
+      # Layered review scope. Drop layers that don't apply, or add
+      # `repo-type/plugin` (or another repo-type layer) if relevant.
+      # Available layers live in HarperFast/ai-review-prompts.
+      review-layers: |
+        universal
+        harper/common
+        harper/v5
+      # Markdown block injected after the layered scope. Use for
+      # repo-specific bullets the shared layers don't cover (e.g. an
+      # OAuth-only CSRF check, a Pro-only API surface). Keep it short;
+      # broader conventions belong in this repo's AGENTS.md.
+      repo-specific-checks: |
+        ## Repo-specific checks
+
+        - (replace this with concrete bullets, or delete the block)
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      AI_REVIEW_LOG_TOKEN: ${{ secrets.AI_REVIEW_LOG_TOKEN }}
+      HARPERFAST_AI_CLIENT_ID: ${{ secrets.HARPERFAST_AI_CLIENT_ID }}
+      HARPERFAST_AI_APP_PRIVATE_KEY: ${{ secrets.HARPERFAST_AI_APP_PRIVATE_KEY }}

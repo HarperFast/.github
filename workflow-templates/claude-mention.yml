@@ -1,0 +1,43 @@
+name: Claude Mention Handler
+
+# Thin caller of HarperFast/ai-review-prompts' `_claude-mention.yml`.
+# Responds to `@claude …` (as the first non-whitespace token) in PR
+# or issue comments. Add the word `deep` to escalate to Opus.
+#
+# Per-repo setup:
+#   1. Secrets: see `claude-review.yml` (same set, minus the optional
+#      AI_REVIEW_LOG_TOKEN which mention doesn't use).
+#   2. Add `.node-version` to the repo root (the reusable uses
+#      `node-version-file: '.node-version'` for setup-node).
+#   3. Set `setup-bun: true` if your repo's tests/scripts run via bun.
+#   4. Customize `repo-specific-conventions` and `pre-commit-validation`
+#      below if the reusable's defaults (Node-only, npm test:unit)
+#      don't match your scripts.
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+concurrency:
+  group: claude-mention-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  mention:
+    uses: HarperFast/ai-review-prompts/.github/workflows/_claude-mention.yml@11872cb1cc2d0e90659659ade6d8ddbbdfbf1d05 # main 2026-05-06
+    with:
+      ai-review-prompts-ref: 11872cb1cc2d0e90659659ade6d8ddbbdfbf1d05
+      # Uncomment / customize as needed:
+      # setup-bun: true
+      # repo-specific-conventions: |
+      #   ## Repo-specific notes
+      #   - (linter quirks, runtime engine, package conventions)
+      # pre-commit-validation: |
+      #   (override only if the default Node-only flow doesn't match
+      #    this repo's scripts; the default is fine for most Harper repos)
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      HARPERFAST_AI_CLIENT_ID: ${{ secrets.HARPERFAST_AI_CLIENT_ID }}
+      HARPERFAST_AI_APP_PRIVATE_KEY: ${{ secrets.HARPERFAST_AI_APP_PRIVATE_KEY }}

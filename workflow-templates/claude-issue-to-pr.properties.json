@@ -1,0 +1,6 @@
+{
+  "name": "Claude Issue to PR",
+  "description": "Label an issue with claude-fix:{typo,docs,deps,bug} and Claude makes the focused change + opens a PR. Thin caller of HarperFast/ai-review-prompts.",
+  "iconName": "blank",
+  "categories": ["Continuous Integration"]
+}

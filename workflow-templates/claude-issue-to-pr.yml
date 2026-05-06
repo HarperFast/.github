@@ -1,0 +1,39 @@
+name: Claude Issue to PR
+
+# Thin caller of HarperFast/ai-review-prompts' `_claude-issue-to-pr.yml`.
+# Labeling an issue with `claude-fix:typo`, `claude-fix:docs`,
+# `claude-fix:deps`, or `claude-fix:bug` kicks Claude off to make a
+# focused, label-scoped change and open a PR back.
+#
+# Per-repo setup:
+#   1. Secrets: see `claude-review.yml`.
+#   2. Add `.node-version` to the repo root.
+#   3. Create the four `claude-fix:*` labels (typo / docs / deps / bug)
+#      — the reusable's auth-gate hard-codes this set.
+#   4. Set `setup-bun: true` if your repo's tests/scripts run via bun.
+
+on:
+  issues:
+    types: [labeled]
+
+concurrency:
+  group: claude-issue-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  work:
+    uses: HarperFast/ai-review-prompts/.github/workflows/_claude-issue-to-pr.yml@11872cb1cc2d0e90659659ade6d8ddbbdfbf1d05 # main 2026-05-06
+    with:
+      ai-review-prompts-ref: 11872cb1cc2d0e90659659ade6d8ddbbdfbf1d05
+      # Uncomment / customize as needed:
+      # setup-bun: true
+      # repo-specific-conventions: |
+      #   ## Repo-specific notes
+      #   - (linter quirks, runtime engine, package conventions)
+      # pre-commit-validation: |
+      #   (override only if the default label-scoped Node flow doesn't
+      #    match this repo's scripts)
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      HARPERFAST_AI_CLIENT_ID: ${{ secrets.HARPERFAST_AI_CLIENT_ID }}
+      HARPERFAST_AI_APP_PRIVATE_KEY: ${{ secrets.HARPERFAST_AI_APP_PRIVATE_KEY }}

@@ -1,0 +1,6 @@
+{
+  "name": "Validate Claude caller workflows",
+  "description": "Structural validation for the Claude caller workflows in this repo. Catches shadow jobs and mutable refs. Pair with the other Claude templates.",
+  "iconName": "blank",
+  "categories": ["Code Quality", "Continuous Integration"]
+}

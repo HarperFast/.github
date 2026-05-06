@@ -1,0 +1,6 @@
+{
+  "name": "Claude PR Review",
+  "description": "Auto-review every PR with Claude. Posts inline findings + a concise top-level summary. Thin caller of HarperFast/ai-review-prompts.",
+  "iconName": "blank",
+  "categories": ["Code Quality", "Continuous Integration"]
+}
