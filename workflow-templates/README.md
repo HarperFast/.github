@@ -19,25 +19,27 @@ Each template is a thin caller of a reusable workflow in `HarperFast/ai-review-p
 
 After dropping the templates into `.github/workflows/`:
 
-1. **Secrets** (per-repo until org-level lands):
+1. **Install the `HarperFast AI Workflows` GitHub App on the repo** (org admin action). The auth gate's org-token-mint step uses the App installation token; without it, the `authorize` job fails with a 401. The App needs `Members: Read` on the org and is installed once per consumer repo (or "all repositories" at the org level).
+
+2. **Secrets** (per-repo until org-level lands):
    - `HARPERFAST_AI_CLIENT_ID`
    - `HARPERFAST_AI_APP_PRIVATE_KEY`
    - `ANTHROPIC_API_KEY`
    - `AI_REVIEW_LOG_TOKEN` *(optional — threads each review run into a per-PR issue in `HarperFast/ai-review-log`)*
 
-2. **Labels** (issue-to-PR triggers — exact spellings, lowercase, colon, no trailing space):
+3. **Labels** (issue-to-PR triggers — exact spellings, lowercase, colon, no trailing space):
    - `claude-fix:typo`
    - `claude-fix:docs`
    - `claude-fix:deps`
    - `claude-fix:bug`
 
-3. **`.node-version`** at the repo root containing the major Node version (e.g. `24`). The mention + issue-to-PR reusables use `node-version-file:` for `actions/setup-node`.
+4. **`.node-version`** at the repo root containing the major Node version (e.g. `24`). The mention + issue-to-PR reusables use `node-version-file:` for `actions/setup-node`.
 
-4. **Branch protection on `main`**: make `validate / validate` a required status check.
+5. **Branch protection on `main`**: make `validate / validate` a required status check.
 
-5. **`AGENTS.md`** (and a `CLAUDE.md` one-liner pointing at it) at the repo root: the agent reads these for repo-specific conventions. Mirror harper / harper-pro for shape.
+6. **`AGENTS.md`** (and a `CLAUDE.md` one-liner pointing at it) at the repo root: the agent reads these for repo-specific conventions. Mirror harper / harper-pro for shape.
 
-6. **Customize the templates**:
+7. **Customize the templates**:
    - `claude-review.yml` — pick the right `review-layers:` for the repo type; fill in `repo-specific-checks:` if there are surface-area concerns the shared layers don't cover.
    - `claude-mention.yml` / `claude-issue-to-pr.yml` — set `setup-bun: true` for plugin repos that test under bun. Override `pre-commit-validation:` if the repo doesn't have `npm run test:unit` / `format:check`.
 
