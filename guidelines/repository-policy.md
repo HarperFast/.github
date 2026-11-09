@@ -22,11 +22,11 @@ Its companion is the [repository taxonomy](./repository-taxonomy.md), which defi
 
 Every active public repo must meet the following baseline. These are commitments, not suggestions. Repositories should always begin as internal or private, and then be proposed to be made public. This proposal step ensures we check for correctness and commit appropriate maintenance resources.
 
-> As the tooling and procedure evolves promoting a repo to public may become autonomous.
+> As the tooling and procedure evolve, promoting a repo to public may become autonomous.
 
 ### Ownership and a maintenance commitment
 
-Every repo has a team owner; not individual people. Public code is a **standing maintenance commitment**, not a one-time contribution. Sharing code with no plan to maintain it is not acceptable. You may utilize the snapshot type to share codebases with no intent to maintain it, but they still must strictly follow the public repo policy set forth in this document.
+Every repo has a team owner; not individual people. Public code is a **standing maintenance commitment**, not a one-time contribution. Sharing code with no plan to maintain it is not acceptable. You may utilize the snapshot type to share codebases with no intent to maintain them, but they still must strictly follow the public repo policy set forth in this document.
 
 Ownership can be transferred, and a creating team need not be the maintaining team — for example, a team ships a repo and OSPO/engineering assumes ongoing maintenance. Any such arrangement must be **explicitly agreed**, not assumed.
 
@@ -36,7 +36,7 @@ Every repo is classified as exactly one [taxonomy type](./repository-taxonomy.md
 
 The property is preferred over a GitHub topic for three reasons: GitHub enforces the allowed-value list, only org admins can set it (topics drift under anyone with maintain access), and it can be read org-wide in a single API call. Topics stay purely for discoverability. **Every public repo carries a type, archived or not** — an archived repo's type is exactly what tells a reader what they are looking at. Internal and private repos do not have this property set.
 
-We do have a number of existing repos with taxonomy types in their names; we'll slowly be working to rename those overtime.
+We do have a number of existing repos with taxonomy types in their names; we'll slowly be working to rename those over time.
 
 ### Required meta documents
 
@@ -68,7 +68,7 @@ Archiving is how we retire a repo without erasing it. **Archived is not deleted:
 Archive a public repo when it is no longer worth keeping *active* but is still worth keeping *referenceable*:
 
 - Dormant, with no meaningful recent activity and no owner willing to commit to maintenance.
-  - Currently considering a 1 year staleness timing to define "recent activity". May consider different amounts of times for different types.
+  - Currently considering a 1 year staleness timing to define "recent activity". May consider different amounts of time for different types.
 - Superseded by a newer repo, feature, or first-party capability.
 - A `snapshot` whose moment has passed (its Harper major is behind) but which still backs published content.
 

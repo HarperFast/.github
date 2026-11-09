@@ -101,7 +101,7 @@ Complexity doesn't make a template an example — the contract (build-from vs re
 
 ## Examples
 
-A complete, worked pattern users read and adapt — reference material, not necessarily something to fork and build on (thought they could). It's functional and tested, but its purpose is to be studied.
+A complete, worked pattern users read and adapt — reference material, not necessarily something to fork and build on (though they could). It's functional and tested, but its purpose is to be studied.
 
 Contrast: a template is built *from*, an example is read *from*, and a guide adds step-by-step narration.
 
