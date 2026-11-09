@@ -3,7 +3,7 @@
   <img alt="Text changing depending on mode. Light: 'So light!' Dark: 'So dark!'" src="https://cdn.prod.website-files.com/68bb0738eb2e6c6ef63de53a/69179476039742d50fd94798_GitHub%20Hero.webp">
 </picture>
 
-Harper is an open-source Node.js platform that merges your database, cache, app logic, and messaging into a single in-memory runtime. It looks like a distributed system, but feels as simple as running one service — making it the easiest way to ship fast, data-intensive, real-time, globally scaled applications.
+Harper is an open-source Node.js platform that merges your database, cache, app logic, and messaging into a single in-memory runtime. It looks like a distributed system, but feels as simple as running one service. That makes it the easiest way to ship fast, data-intensive, real-time, globally scaled applications.
 
 The typical journey is: **develop locally with [Harper](https://github.com/HarperFast/harper)**, then **deploy and operate globally on [Harper Fabric](https://fabric.harper.fast)**.
 
@@ -11,23 +11,23 @@ The typical journey is: **develop locally with [Harper](https://github.com/Harpe
 
 ## Key resources
 
-- **[Docs & Getting Started](https://docs.harperdb.io/docs/getting-started/installation)** – Install Harper, connect to Fabric, and deploy your first app.
+- **[Docs & Getting Started](https://docs.harperdb.io/docs/getting-started/installation)**: Install Harper, connect to Fabric, and deploy your first app.
 
-- **[Core Open Source Runtime](https://github.com/HarperFast/harper)** – The main Harper engine.
+- **[Core Open Source Runtime](https://github.com/HarperFast/harper)**: The main Harper engine.
 
-- **[Harper Fabric (Hosted Platform)](https://fabric.harper.fast)** – Run and manage distributed Harper clusters in the cloud.
+- **[Harper Fabric (Hosted Platform)](https://fabric.harper.fast)**: Run and manage distributed Harper clusters in the cloud.
 
-- **[Apps, Templates & Components](https://github.com/topics/harper-app)** – Explore real projects built on Harper via the `harper-app` topic.
+- **[Apps, Templates & Components](https://github.com/topics/harper-app)**: Explore real projects built on Harper via the `harper-app` topic.
 
-- **[Harper Learn](https://github.com/HarperFast/harper-learn)** – Weekly video series + code following the journey from setup to real-world apps.
+- **[Harper Learn](https://github.com/HarperFast/harper-learn)**: Weekly video series + code following the journey from setup to real-world apps.
 
 ---
 
 ## Community
 
-- **[Discord](https://harper.fast/discord)** – Chat with the team and community, ask questions, and share what you’re building.
+- **[Discord](https://harper.fast/discord)**: Chat with the team and community, ask questions, and share what you’re building.
 
-- **[YouTube](https://www.youtube.com/@harper-fast)** – Deep dives, Harper Learn episodes, and live coding sessions.
+- **[YouTube](https://www.youtube.com/@harper-fast)**: Deep dives, Harper Learn episodes, and live coding sessions.
 
 ---
 

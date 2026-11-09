@@ -1,42 +1,40 @@
 # Harper Repository Meta Documents
 
-Companion to the [public repository policy](./repository-policy.md). The policy says **which** meta documents an active public repo carries; this document covers the **purpose, scope, and authorship** of each one, so that the right content lands in the right file. It applies to humans and agents alike.
+The [public repository policy](./repository-policy.md) says which meta documents an active public repo carries. This document covers what each one is for and what belongs in it, for humans and agents alike.
 
-Scope follows the policy's: these expectations are written for **active public** repositories. Archived repos keep the taxonomy type and archive note the policy requires of them and are exempt from the rest — they are read-only, so there is nothing to add.
+These expectations apply to active public repos. Archived repos keep the taxonomy type and archive note the policy requires, and are exempt from the rest.
 
-Treat these as living documents: update them as the repository evolves.
+Treat these as living documents: update them as the repo evolves.
 
 ## How meta documents are supplied
 
-Two mechanisms, and the difference is the thing to get right:
+There are two mechanisms, and the difference matters:
 
-- **Inherited org-wide.** GitHub serves `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, and `SUPPORT` from this repo to every repository in the organization that does not define its own. The files aren't literally added to the repository; they are only rendered on the GitHub repo page (as tabs in the rendered README area).
-- **Repo-local.** `LICENSE`, `README`, and `AGENTS.md` are never inherited; if a repo wants one, it writes its own. The policy _requires_ `LICENSE` and `README`; `AGENTS.md` is optional and added when a repo has agent-specific facts worth recording.
+- **Inherited org-wide.** GitHub uses this repo's `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, and `SUPPORT` files for every repo in the organization that doesn't have its own. The files aren't added to those repos. GitHub shows or links them in its interface, such as the tabs above a repo's README and the issue and pull request forms.
+- **Repo-local.** GitHub never inherits `LICENSE`, `README`, or `AGENTS.md`. The policy requires every active public repo to have its own `LICENSE` and `README`. `AGENTS.md` is optional: add it when a repo has agent-specific facts worth recording.
 
-**Inheritance is the default; a local copy is the exception.** Add a repo-local version of an inherited document only when that repo genuinely needs to say something the org version does not — and remember that a local file _replaces_ the org one for that repo in full, so the repo then owns keeping it current. Never copy an org file in unchanged: a verbatim copy is a second source for the same policy, and it will drift.
+**Inheritance is the default, and a local copy is the exception.** Add a local version of an inherited document only when the repo needs to say something the org version doesn't. A local file _replaces_ the org one entirely, and the repo then owns keeping it current. Never copy an org file unchanged: a verbatim copy is a second source for the same policy, and it will drift.
 
-Every document described here lives in a public repository and is therefore **public** — `CONTRIBUTING.md` and `AGENTS.md` included, despite both being written for people and agents already working on the project. Credentials, tokens, private hostnames, internal-only runbooks, and anything else unpublishable belong in internal documentation, never in a repo-local meta document. A public repo is [training surface](./repository-policy.md#why-this-exists); what lands in one of these files is indexed and ingested.
+Every document described here is **public**, including `CONTRIBUTING.md` and `AGENTS.md`. Keep credentials, tokens, private hostnames, internal runbooks, and anything else unpublishable out of them. A public repo is [training surface](./repository-policy.md#why-this-exists).
 
 ## LICENSE
 
-Required, repo-local, on every active public repo — there is no org-wide default and no inheritance.
+Required and repo-local on every active public repo. There's no org-wide default.
 
-The license is the legal statement of what others may do with the code, so it is the one meta document that is never a judgment call to include. See the [public repository policy](./repository-policy.md#required-meta-documents) for the baseline.
+The license is the legal statement of what others may do with the code. Including it is never a judgment call.
 
 ## README.md
 
-Required, repo-local. The primary entrypoint for any project. It answers _what is this?_, _how do I use it?_, and _where do I go next?_.
-
-Everyone reads the README: users, contributors, evaluators, agents, etc.
+Required and repo-local. The README is the entry point for any project. It answers _what is this?_, _how do I use it?_, and _where do I go next?_.
 
 ### What belongs here
 
 - Project summary and purpose
 - Installation and usage instructions
-- Public API reference (if not documented elsewhere)
-- Links to CONTRIBUTING, LICENSE, and community spaces (Slack, Discord, forums, etc.)
-- Links to external documentation (hosted docs, changelogs, blog/marketing)
-- Badge/status indicators if relevant
+- Public API reference, if it isn't documented elsewhere
+- Links to `CONTRIBUTING`, `LICENSE`, and community channels such as Discord
+- Links to external documentation: hosted docs, changelogs, and blog posts
+- Badges or status indicators, if relevant
 - The archive note, if the repo is archived (see the [policy](./repository-policy.md#required-archive-note))
 
 ### What does not belong here
@@ -44,81 +42,79 @@ Everyone reads the README: users, contributors, evaluators, agents, etc.
 - Internal development workflows
 - Contributor onboarding
 - Agent-specific instructions
-- In-depth usage guides (consider dedicated guides or posts instead)
-
-### Template
-
-> **Deferred.** A README template is tracked as follow-up work; the scope guidance above is the current reference.
+- In-depth usage guides (use dedicated guides or posts instead)
 
 ## CONTRIBUTING.md
 
-Inherited org-wide by default; repo-local by exception.
+Inherited org-wide by default. Repo-local by exception.
 
-The **public** contributor-facing guide to a project. It answers _how do I work on this project, and should I?_. The org-wide default in [`HarperFast/.github`](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) covers whether Harper accepts contributions at all and how to reach maintainers, and explicitly routes readers to the repository's own `CONTRIBUTING.md` for specifics.
+The **public** contributor-facing guide to a project. It answers _how do I work on this project, and should I?_. The org-wide [`CONTRIBUTING.md`](../CONTRIBUTING.md) covers whether Harper accepts contributions and how to reach maintainers. It sends readers to each repo's own documentation for specifics.
 
-Write a repo-local one when the project has specifics worth stating — which is most repos with a build, a test suite, or a release process — or to say that contributions are not accepted here.
+Write a local one when the project has specifics worth stating, which is most repos with a build, a test suite, or a release process. Also write one to say that the repo doesn't accept contributions.
 
-A repo-local file replaces the org default entirely, so the org-wide contribution policy and contact routing stop reaching that repo's readers. Link back to it rather than restating it: open the local file with a line like `Harper's [organization-wide contribution policy](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) applies; what follows is specific to this repository.` That keeps one source for the shared text and leaves the local file holding only what is actually local.
+A local file replaces the org default entirely, so the org-wide contribution policy stops reaching that repo's readers. Link to it instead of restating it. Open the local file with a line like this:
 
-Its readers are maintainers and contributors (humans and agents), but it is a public file in a public repo: write it for an outside contributor.
+```md
+Harper's [organization-wide contribution policy](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) applies. What follows is specific to this repository.
+```
+
+That keeps one source for the shared text, and the local file holds only what's local.
+
+Its readers are maintainers and contributors, human and agent. It's still a public file, so write it for an outside contributor.
 
 ### What belongs here
 
-- Repository structure overview
+- Repo structure overview
 - Development environment setup
-- Contribution workflow (branching, PRs, commit conventions)
+- Contribution workflow: branching, PRs, and commit conventions
 - Build process
-  - Build command(s)
+  - Build commands
   - Relevant configuration
 - Release process
   - Manual vs automated steps
 - Testing guide
   - How tests are structured
   - How to add new ones
-  - How to execute them
+  - How to run them
   - Known flakiness
   - Manual local testing
 - Code style and formatting rules
-  - Linter and formatting commands
+  - Linter and formatter commands
   - Relevant configuration
 - CI environment
 - Development-facing documentation
-  - Particularly useful APIs for development
-  - Scripts necessary for development/testing
+  - APIs that are useful during development
+  - Scripts needed for development or testing
 
 ### What does not belong here
 
-- Public interface documentation (API, scripts, etc.)
+- Public interface documentation (APIs, scripts, and similar)
 - Usage information
-- Agent specific instructions
-- Internal-only material: credentials, private infrastructure, internal runbooks, or anything else that cannot be published
-
-### Template
-
-> **Deferred.** A CONTRIBUTING template is tracked as follow-up work; the scope guidance above is the current reference.
+- Agent-specific instructions
+- Internal-only material: credentials, private infrastructure, internal runbooks, or anything else that can't be published
 
 ## AGENTS.md
 
-Optional, repo-local; never inherited.
+Optional and repo-local. Never inherited.
 
-A minimal, agent-specific document _complementary_ to the `README.md` and `CONTRIBUTING.md`. It answers _what does an agent need to know that it **cannot reliably infer** from existing documentation?_. Furthermore, it does **not replace** existing documentation, and does not duplicate the explanations in it.
+A minimal, agent-specific document that complements `README.md` and `CONTRIBUTING.md`. It answers _what does an agent need to know that it **can't reliably infer** from the existing documentation?_. It doesn't replace or repeat that documentation.
 
-The audience for this document is strictly agents. While humans may read it too, the primary utility of this document is meant to be purely for agents. Any information relevant to a human should exist within another document (likely `README.md` or `CONTRIBUTING.md`). It should accelerate the agent's comprehension of the code base without excessive file reads and token usage.
+Write it for agents. Anything a human contributor needs belongs in another document, usually `README.md` or `CONTRIBUTING.md`. A good `AGENTS.md` helps an agent understand the codebase without excessive file reads and token use.
 
-That last point is why `AGENTS.md` may restate a bare command — `npm run build`, the test invocation — that `CONTRIBUTING.md` also documents: the agent gets it in one read instead of three. Keep the restatement to the command itself and leave the explanation in `CONTRIBUTING.md`, which stays the source of truth; when a command changes, `AGENTS.md` is one of the files to update. What does not belong here is a second copy of `CONTRIBUTING.md`.
+That's why `AGENTS.md` may repeat a bare command that `CONTRIBUTING.md` also documents, such as `npm run build` or the test command. Keep it to the command itself and leave the explanation in `CONTRIBUTING.md`, which stays the source of truth. When a command changes, update both files. Don't turn `AGENTS.md` into a second copy of `CONTRIBUTING.md`.
 
 ### What belongs here
 
-- Facts or instructions that may seem obvious to a human, but would require the agent to read and understand specific project files
-- Specific instructions to- or not-to- do such as commands to execute or file paths to interact with
-- Preferences for agentic workflows such as specific ways to attribute or sign-off commits or particular headers to include in requests
+- Facts that seem obvious to a human but that an agent would otherwise have to read specific project files to learn
+- Commands to run or avoid, and files to read or leave alone
+- Agent workflow requirements, such as how to attribute or sign off commits, or headers to include in requests
 
 ### What does not belong here
 
-- Project description or summary (README.md)
-- Contribution workflows: how to open a PR, commit conventions, the release process (CONTRIBUTING.md)
-- Prose written for a person — rationale, onboarding narrative, explanation. If a human contributor needs to _read_ it, it belongs in another document
-- Secrets of any kind: tokens, API keys, internal hostnames, or private endpoints. An agent that needs a credential reads it from the environment; the file naming that environment variable is public
+- Project description or summary (`README.md`)
+- Contribution workflows: how to open a PR, commit conventions, and the release process (`CONTRIBUTING.md`)
+- Prose written for a person: rationale, onboarding narrative, or explanation. If a human contributor needs to _read_ it, it belongs in another document
+- Secrets of any kind: tokens, API keys, internal hostnames, or private endpoints. An agent that needs a credential reads it from the environment, and naming the environment variable is fine
 
 ### Template
 
@@ -158,26 +154,26 @@ Review `README.md` and `CONTRIBUTING.md` for all relevant repository information
 
 ## CODE_OF_CONDUCT.md
 
-Inherited org-wide by default; repo-local by exception.
+Inherited org-wide by default. Repo-local by exception.
 
-The behavioral standard for everyone participating in the project, and the route for reporting a violation. The org-wide [`CODE_OF_CONDUCT.md`](https://github.com/HarperFast/.github/blob/main/CODE_OF_CONDUCT.md) applies to every Harper repository.
+The behavioral standard for everyone participating in the project, and how to report a violation. The org-wide [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md) applies to every Harper repo.
 
-Override it only if a repo has a genuinely different standard or reporting path — a jointly-owned or foundation-governed project, for example. Then link the org file for the baseline and state only what differs, as above. A repo-local copy that merely restates the org text is drift waiting to happen; leave it inherited instead.
+Override it only if a repo has a different standard or reporting path, such as a jointly owned or foundation-governed project. Then link the org file for the baseline and state only what differs, as described for [`CONTRIBUTING.md`](#contributingmd). Otherwise leave it inherited.
 
 ## SECURITY.md
 
-Inherited org-wide by default; repo-local by exception.
+Inherited org-wide by default. Repo-local by exception.
 
-How to report a vulnerability, and what a reporter can expect in return. The org-wide [`SECURITY.md`](https://github.com/HarperFast/.github/blob/main/SECURITY.md) is the default reporting path for every Harper repository, and GitHub surfaces it from the repo's Security tab even when the file is inherited.
+How to report a vulnerability, and what a reporter can expect in return. The org-wide [`SECURITY.md`](../SECURITY.md) is the default reporting path for every Harper repo. GitHub shows it on the repo's Security tab even when the file is inherited.
 
-Override it when a repo needs its own disclosure terms — a different contact, a bug bounty scope, supported-version statements, or a published signing key.
+Override it when a repo needs its own disclosure terms: a different contact, a bug bounty scope, supported-version statements, or a published signing key.
 
-A local file shadows the org one in full, and for this document that is a real hazard: a `SECURITY.md` carrying only a supported-versions table leaves the repo with no reporting route at all. Link the org file for the baseline and state only what differs beneath it, exactly as a repo-local `CONTRIBUTING.md` does.
+A local file replaces the org one entirely, and for this document that's a real hazard. A `SECURITY.md` with only a supported-versions table leaves the repo with no reporting route at all. Link the org file for the baseline and state only what differs beneath it, as described for [`CONTRIBUTING.md`](#contributingmd).
 
 ## SUPPORT.md
 
-Inherited org-wide by default; repo-local by exception.
+Inherited org-wide by default. Repo-local by exception.
 
-Where to go for help, which is deliberately not the same as where to report a bug. The org-wide [`SUPPORT.md`](https://github.com/HarperFast/.github/blob/main/SUPPORT.md) covers issues, Discord, Code of Conduct reports, and the customer support and `opensource@` contacts.
+Where to go for help. The org-wide [`SUPPORT.md`](../SUPPORT.md) covers bug reports, Discord, Code of Conduct reports, and support contacts.
 
-Override it when a repo has its own support channel, or when it is unmaintained and readers need to be told so plainly. Link the org file for the routes that still apply rather than dropping them — a local file replaces it in full. Otherwise leave it inherited.
+Override it when a repo has its own support channel, or when it's unmaintained and readers need to be told so plainly. Link the org file for the routes that still apply instead of dropping them, since a local file replaces it entirely. Otherwise leave it inherited.
