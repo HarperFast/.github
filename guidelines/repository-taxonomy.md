@@ -4,7 +4,7 @@ Every **public** repository gets **exactly one type**. The type establishes a ba
 
 These types do not apply to Harper's internal and private repositories; a separate taxonomy system is available privately for Harper engineers.
 
-The types defined here feed the [public repository policy](repository-policy.md), which sets what every active public repo must commit to. The policy's required meta documents are detailed in [meta documents](meta-documents.md).
+The types defined here feed the [public repository policy](repository-policy.md), which sets what every active public repository must commit to. The policy's required meta documents are detailed in [meta documents](meta-documents.md).
 
 > This taxonomy may not be perfect and could change over time. Refinement is expected. If you have something that doesn't cleanly fit, or you see a new classification pattern, please share it and help improve the system!
 
@@ -24,11 +24,14 @@ The types defined here feed the [public repository policy](repository-policy.md)
 
 ### Classification Decision Tree
 
-Follow this decision tree to assist with classifying public repositories. It applies to archived repos too. Classify an archived repo by its original active purpose, since the type tells a reader what they're looking at.
+Follow this decision tree to assist with classifying public repositories. It applies to archived repositories too. Classify an archived repository by its original active purpose, since the type tells a reader what they're looking at.
 
 ```mermaid
 flowchart TD
-    A{Contains a<br/>config.yaml?} -->|Yes| B{Fully-featured and<br/>meant to be used directly?}
+    S{Frozen companion to a dated<br/>post, talk, video, or benchmark?} -->|Yes| Snapshot([Snapshot])
+    S -->|No| A
+
+    A{Runs as a Harper component?<br/>config.yaml or Harper's default<br/>component files} -->|Yes| B{Fully-featured and<br/>meant to be used directly?}
     A -->|No| G{A utility used<br/>within other projects?}
 
     B -->|Yes| C{config.yaml has<br/>pluginModule / extensionModule?}
@@ -41,10 +44,7 @@ flowchart TD
     D -->|"No: reference / learn from it"| E{Multiple steps + a page in the<br/>Documentation Learn section?}
 
     E -->|Yes| Guide([Guide])
-    E -->|No| F{Accompanies a post, video, or talk<br/>published on the Harper website?}
-
-    F -->|Yes| Snapshot([Snapshot])
-    F -->|No| Example([Example])
+    E -->|No| Example([Example])
 
     G -->|Yes| Library([Library])
     G -->|No| H{Standalone product / platform / interface<br/>for direct user interaction?}
@@ -74,7 +74,7 @@ Plugins track latest Harper, moving in lockstep with the runtime API they extend
 
 ## Applications
 
-A literal Harper [Application](https://docs.harperdb.io/reference/v5/components/applications) component: a feature-complete, deployable first-party app that runs on Harper. Like a plugin it has a `config.yaml`, but *without* `pluginModule`/`extensionModule`, and it is meant to be used directly rather than to extend the runtime.
+A literal Harper [Application](https://docs.harperdb.io/reference/v5/components/applications) component: a feature-complete, deployable first-party app that runs on Harper. It has a `config.yaml` without `pluginModule`/`extensionModule`, or relies on Harper's [default component configuration](https://docs.harperdb.io/reference/v5/components/overview#default-configuration). It's meant to be used directly rather than to extend the runtime.
 
 The line against Template is completeness: an application works as-is (perhaps with light configuration); a template is a starting point you build from.
 
@@ -123,21 +123,21 @@ A frozen companion to a dated artifact: a blog post, talk, video, or benchmark. 
 
 - **Frozen but open** during its major's life: its Harper version stays pinned, and issues/PRs stay enabled for bug fixes.
 - **Archived when the next Harper major goes GA.** Read-only, not deleted. It stays referenceable and keeps its `snapshot` type after archival.
-- **Declares its backing content in the repo `homepage` field**, and links it in the README (see the [archive note](repository-policy.md#required-archive-note)). If no dated artifact backs it, it isn't a snapshot.
+- **Declares its backing content in the repository `homepage` field**, and links it in the README (see the [archive note](repository-policy.md#required-archive-note)). If no dated artifact backs it, it isn't a snapshot.
 - Going red on a *future* major is expected, not a failure.
-- A frequently-referenced Snapshot can be **promoted** to a maintained Example/Template.
+- A frequently referenced snapshot can seed a maintained Example or Template. Fork it into a new living repository, and leave the snapshot frozen for the content that points at it.
 
 ### Guide vs Snapshot
 
-> **A dated artifact never references a living repo. living ↔ living, frozen ↔ frozen.**
+> **A dated artifact never references a living repository. living ↔ living, frozen ↔ frozen.**
 
 - **Guide** backs canonical Learn content. Living, tracks current Harper.
 - **Snapshot** backs a dated artifact (blog, talk, video). Frozen, version-stamped, eventually archived.
 
-To build content on a living repo, **snapshot it first**: fork its current state into a version-stamped Snapshot and point the post at that. The living repo stays free to evolve, and nothing dated depends on its current state.
+To build content on a living repository, **snapshot it first**: fork its current state into a version-stamped Snapshot and point the post at that. The living repository stays free to evolve, and nothing dated depends on its current state.
 
 ## Meta
 
 Public repositories that support the org or its products rather than being consumed as a product themselves: org profile, CI/build artifacts, and process and tooling config.
 
-**Upgrades & testing.** None enforced. Upgrade and test only as the repo's own needs dictate.
+**Upgrades & testing.** None enforced. Upgrade and test only as the repository's own needs dictate.
