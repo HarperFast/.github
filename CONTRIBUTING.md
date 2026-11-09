@@ -15,7 +15,7 @@ Talk to the maintainers first, in an issue or on our community [Discord](https:/
 
 AI tools are welcome, as long as you supervise them. Read the [Harper AI Policy](https://github.com/HarperFast/.github/blob/main/guidelines/ai-policy.md). In short:
 
-- You choose the work, and you submit it from your own GitHub account. Agents and bot accounts must not open pull requests or issues.
+- You choose the work, and you submit it from your own GitHub account. Agents and bot accounts must not open pull requests.
 - You read and understand everything you submit, and you answer for it in review.
 - You disclose AI use with `Co-Authored-By` trailers in commits and a note in the PR description.
 
@@ -32,6 +32,10 @@ AI tools are welcome, as long as you supervise them. Read the [Harper AI Policy]
 - **Keep a few PRs open at a time.** Until you've had PRs merged in a repository, you can have up to 3 open PRs there at once. GitHub enforces this limit, and it lifts after your first 2 merged PRs. Some repositories set their own limits.
 
 Maintainers may close a PR without review when it looks unsupervised. Examples include PRs opened in bulk, PRs from bot or agent accounts, and PRs missing the AI use section.
+
+## Issues
+
+Issues are welcome, with or without AI help. To keep things manageable, please have no more than 20 open issues in a repository at once. Maintainers may close issues opened in bulk and block accounts that spam.
 
 ## Code of Conduct
 

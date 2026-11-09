@@ -1,6 +1,6 @@
 # Harper AI Policy
 
-> **Status: draft.** This policy states how we work today. Automated checks for the disclosure rules below are planned but not in place yet.
+> **Status: draft.** This policy is where we're headed. Parts of our own tooling and process are still catching up to it, and automated checks for the disclosure rules are planned but not in place yet.
 
 Harper is AI-forward. AI is welcome in our open source projects, as long as a human supervises it. This policy covers everyone who works in Harper's open source repositories: Harper engineers and outside contributors. Harper's source-available repositories don't accept outside contributions (see [Contributing](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md)).
 
@@ -13,7 +13,7 @@ Use any AI tools you like. A contribution is supervised when a human:
 - has read it and understands it, and
 - answers for it in review.
 
-Agents and bot accounts never open pull requests or issues on their own. Pointing an agent at our issue list and letting it open PRs is not supervised, however good the output is.
+Agents and bot accounts never open pull requests on their own. Pointing an agent at our issue list and letting it open PRs is not supervised, however good the output is. Automation that maintainers set up for a repository, such as Dependabot, isn't a contributor and isn't covered by this rule.
 
 ## How Harper engineers work
 
@@ -45,4 +45,4 @@ A good description states the problem, the alternatives considered, and the solu
 
 Don't post an agent's review as your own. The author can already run their own agents, so pasting an agent's output, or approving because an agent did, adds nothing. Your review is for the judgment only you can give: architecture, approach, and context the code doesn't show.
 
-Automated agent reviews, such as those run by CI or our internal tooling, are labeled as agent reviews. They don't count as human review.
+Agent tooling may post review comments on your behalf so you can read them in place. As you read them, edit the prose into your own words. What stays on the PR under your name is your review.
