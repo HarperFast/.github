@@ -38,6 +38,7 @@ We welcome issues and PRs in the core [Harper](https://github.com/HarperFast/har
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
 - [Contributing Guidelines](../CONTRIBUTING.md)
 - [Security Policy](../SECURITY.md)
+- [Repository Guidelines](../guidelines/README.md)
 - [Support](../SUPPORT.md)
 
 ### Open Source vs Source Available
