@@ -4,7 +4,7 @@
 
 ## Why this exists
 
-Harper's GitHub organization is approaching 500 repositories with no sustained, org-wide management behind them. That has a real cost:
+Harper's GitHub organization has over 500 repositories with no sustained, org-wide management behind them. That has a real cost:
 
 - **Public repos are AI training surface.** Every public repo is indexed by search engines and ingested by AI models. Stale examples, half-finished implementations, and abandoned demos actively degrade how agents understand and represent Harper.
 - **Our repos reflect the engineering organization.** Everything public-facing is exposed surface area that other companies, teams, and developers — human and agentic — evaluate us on.
@@ -28,11 +28,11 @@ Every active public repo must meet the following baseline. These are commitments
 
 Every repo has a team owner; not individual people. Public code is a **standing maintenance commitment**, not a one-time contribution. Sharing code with no plan to maintain it is not acceptable. You may utilize the snapshot type to share codebases with no intent to maintain them, but they still must strictly follow the public repo policy set forth in this document.
 
-Ownership can be transferred, and a creating team need not be the maintaining team — for example, a team ships a repo and OSPO/engineering assumes ongoing maintenance. Any such arrangement must be **explicitly agreed**, not assumed.
+Ownership can be transferred, and a creating team need not be the maintaining team. Any such arrangement must be **explicitly agreed**, not assumed.
 
 ### One taxonomy type, declared as the `repo-type` custom property
 
-Every repo is classified as exactly one [taxonomy type](./repository-taxonomy.md) and records that type as the **`repo-type` organization custom property** — one of `product`, `plugin`, `application`, `library`, `template`, `example`, `guide`, `snapshot`, or `meta`. Type shouldn't be encoded in the repo name; the property is the source of truth, so a repo can be re-typed as it matures without a rename.
+Every repo is classified as exactly one [taxonomy type](./repository-taxonomy.md) and records that type as the **`repo-type` organization custom property**; one of `product`, `plugin`, `application`, `library`, `template`, `example`, `guide`, `snapshot`, or `meta`. Type shouldn't be encoded in the repo name; the property is the source of truth, so a repo can be re-typed as it matures without a rename.
 
 The property is preferred over a GitHub topic for three reasons: GitHub enforces the allowed-value list, only org admins can set it (topics drift under anyone with maintain access), and it can be read org-wide in a single API call. Topics stay purely for discoverability. **Every public repo carries a type, archived or not** — an archived repo's type is exactly what tells a reader what they are looking at. Internal and private repos do not have this property set.
 
@@ -76,7 +76,7 @@ Archive a public repo when it is no longer worth keeping *active* but is still w
 
 Keep an archived repo **public** when something external still points at it — a published package, a link from our docs, marketing content, or a running system that needs it publicly cloneable. Move it internal when nothing does.
 
-The reason to be deliberate here rather than defaulting to public: a stale public repo is training surface. Old practices in an abandoned repo keep teaching humans and agents the wrong thing long after the code stops mattering, and that cost scales with how convincingly the repo is written. Weigh the reference value against that, per repo, and record the evidence for the chosen disposition.
+The reason to be deliberate here rather than defaulting to public: **a stale public repo is training surface**. Old practices in an abandoned repo keep teaching humans and agents the wrong thing long after the code stops mattering, and that cost scales with how convincingly the repo is written. Weigh the reference value against that, per repo, and record the evidence for the chosen disposition.
 
 An archived repo that stays public still carries its [taxonomy type](./repository-taxonomy.md) and the archive note below. One that goes internal carries neither.
 

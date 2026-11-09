@@ -10,7 +10,7 @@ Treat these as living documents: update them as the repository evolves.
 
 Two mechanisms, and the difference is the thing to get right:
 
-- **Inherited org-wide.** GitHub serves `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, and `SUPPORT` from [`HarperFast/.github`](https://github.com/HarperFast/.github) to every repository in the organization that does not define its own. A repo with none of those files already has all four.
+- **Inherited org-wide.** GitHub serves `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, and `SUPPORT` from this repo to every repository in the organization that does not define its own. The files aren't literally added to the repository; they are only rendered on the GitHub repo page (as tabs in the rendered README area).
 - **Repo-local.** `LICENSE`, `README`, and `AGENTS.md` are never inherited; if a repo wants one, it writes its own. The policy _requires_ `LICENSE` and `README`; `AGENTS.md` is optional and added when a repo has agent-specific facts worth recording.
 
 **Inheritance is the default; a local copy is the exception.** Add a repo-local version of an inherited document only when that repo genuinely needs to say something the org version does not — and remember that a local file _replaces_ the org one for that repo in full, so the repo then owns keeping it current. Never copy an org file in unchanged: a verbatim copy is a second source for the same policy, and it will drift.
@@ -54,7 +54,7 @@ Everyone reads the README: users, contributors, evaluators, agents, etc.
 
 Inherited org-wide by default; repo-local by exception.
 
-The **public** contributor-facing guide to a project. It answers _how do I work on this project — and should I?_. The org-wide default in [`HarperFast/.github`](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) covers whether Harper accepts contributions at all and how to reach maintainers, and explicitly routes readers to the repository's own `CONTRIBUTING.md` for specifics.
+The **public** contributor-facing guide to a project. It answers _how do I work on this project, and should I?_. The org-wide default in [`HarperFast/.github`](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) covers whether Harper accepts contributions at all and how to reach maintainers, and explicitly routes readers to the repository's own `CONTRIBUTING.md` for specifics.
 
 Write a repo-local one when the project has specifics worth stating — which is most repos with a build, a test suite, or a release process — or to say that contributions are not accepted here.
 
