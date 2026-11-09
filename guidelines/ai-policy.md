@@ -9,11 +9,11 @@ Harper is AI-forward. AI is welcome in our open source projects, as long as a hu
 Use any AI tools you like. A contribution is supervised when a human:
 
 - chose the work,
-- submits it from their own GitHub account,
+- submits it from their own GitHub account, directly or through an agent they're running,
 - has read it and understands it, and
 - answers for it in review.
 
-Agents and bot accounts never open pull requests on their own. Pointing an agent at our issue list and letting it open PRs is not supervised, however good the output is. Automation that maintainers set up for a repository, such as Dependabot, isn't a contributor and isn't covered by this rule.
+An agent may open a pull request from your account while you're running it, as long as you observe, review, or approve what it submits. If it opens a PR before you've read the change, keep the PR a draft until you have. Unattended agents and bot accounts must not open pull requests. Pointing an agent at our issue list and letting it open PRs on its own is not supervised, however good the output is. Automation that maintainers set up for a repository, such as Dependabot, isn't a contributor and isn't covered by this rule.
 
 ## How Harper engineers work
 

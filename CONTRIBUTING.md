@@ -15,7 +15,7 @@ Talk to the maintainers first, in an issue or on our community [Discord](https:/
 
 AI tools are welcome, as long as you supervise them. Read the [Harper AI Policy](https://github.com/HarperFast/.github/blob/main/guidelines/ai-policy.md). In short:
 
-- You choose the work, and you submit it from your own GitHub account. Agents and bot accounts must not open pull requests.
+- You choose the work, and pull requests come from your own GitHub account. An agent you're running may open one for you, as long as you observe, review, or approve what it submits. Keep it a draft until you've read the change. Unattended agents and bot accounts must not open pull requests.
 - You read and understand everything you submit, and you answer for it in review.
 - You disclose AI use with `Co-Authored-By` trailers in commits and a note in the PR description.
 
