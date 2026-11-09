@@ -1,14 +1,18 @@
 ## Problem
 
-<!-- What problem does this solve? Link the issue if there is one. -->
-
-## Alternatives considered
-
-<!-- What other approaches did you consider, and why not those? -->
+<!-- What problem does this solve, and who does it affect? Link the issue if there is one. -->
 
 ## Solution
 
-<!-- What does this PR do? -->
+<!-- What does this PR change, and what's the effect? -->
+
+## Alternatives considered
+
+<!-- What other approaches did you weigh, and why not those? Remove this section if you didn't weigh any. -->
+
+## Verification
+
+<!-- How did you check this works? Tests you ran or added, and any manual testing. -->
 
 ## AI use
 
