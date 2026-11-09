@@ -1,13 +1,38 @@
 # Contributing to Harper
 
-Harper supplies both **open source** and **source available** projects.
+Harper publishes both **open source** and **source available** projects. Check a repository's `LICENSE` to see which it is.
 
-By default, we generally always accept contributions to **open source** projects, but currently do not accept contributions to **source available** projects.
+- **Open source projects** accept contributions, following this guide.
+- **Source available projects** do not accept contributions.
 
-This may change over time or on a case-by-case basis, so please check the specific repository's `README.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` and `LICENSE` files for details.
+Individual repositories may add their own rules. Check the repository's `README.md` and `CONTRIBUTING.md` before you start.
 
-Contributors are encouraged to communicate with maintainers in issues or other channels (such as our community [Discord](https://harper.fast/discord)) before submitting changes.
+## Before you start
+
+Talk to the maintainers first, in an issue or on our community [Discord](https://harper.fast/discord). Agreeing on the problem and approach before you write code saves everyone time.
+
+## Using AI
+
+AI tools are welcome, as long as you supervise them. Read the [Harper AI Policy](https://github.com/HarperFast/.github/blob/main/guidelines/ai-policy.md). In short:
+
+- You choose the work, and you submit it from your own GitHub account. Agents and bot accounts must not open pull requests or issues.
+- You read and understand everything you submit, and you answer for it in review.
+- You disclose AI use with `Co-Authored-By` trailers in commits and a note in the PR description.
+
+## Before you open a pull request
+
+1. **Review it yourself.** Read the whole diff.
+2. **Have an AI agent review it.** At least one agent review is required, run with fresh context, separate from the session that wrote the change. A subagent with no prior context counts. More reviews are welcome, especially from other model families. For review guidance tuned to Harper, you can give your agent the prompts in [`HarperFast/ai-review-prompts`](https://github.com/HarperFast/ai-review-prompts), such as `universal.md` and `harper/common.md`.
+3. **Run the tests** the repository documents.
+
+## Pull requests
+
+- **Describe the problem, the alternatives you considered, and your solution.** The [PR template](https://github.com/HarperFast/.github/blob/main/PULL_REQUEST_TEMPLATE.md) has a section for each.
+- **Fill in the AI use section.** Name the AI tools you used, or "none". Add a `Reviewed with:` line saying which agents reviewed the change before you opened the PR, and how.
+- **Keep a few PRs open at a time.** Until you've had PRs merged in a repository, you can have up to 3 open PRs there at once. GitHub enforces this limit, and it lifts after your first 2 merged PRs. Some repositories set their own limits.
+
+Maintainers may close a PR without review when it looks unsupervised. Examples include PRs opened in bulk, PRs from bot or agent accounts, and PRs missing the AI use section.
 
 ## Code of Conduct
 
-Harper has a [Code of Conduct](CODE_OF_CONDUCT.md) that all contributors are expected to follow.
+Harper has a [Code of Conduct](https://github.com/HarperFast/.github/blob/main/CODE_OF_CONDUCT.md) that all contributors are expected to follow.
