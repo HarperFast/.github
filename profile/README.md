@@ -11,15 +11,11 @@ The typical journey is: **develop locally with [Harper](https://github.com/Harpe
 
 ## Key resources
 
-- **[Docs & Getting Started](https://docs.harperdb.io/docs/getting-started/installation)**: Install Harper, connect to Fabric, and deploy your first app.
+- **[Docs & Getting Started](https://docs.harperdb.io/learn/getting-started/install-and-connect-harper)**: Install Harper, connect to Fabric, and deploy your first app.
 
 - **[Core Open Source Runtime](https://github.com/HarperFast/harper)**: The main Harper engine.
 
 - **[Harper Fabric (Hosted Platform)](https://fabric.harper.fast)**: Run and manage distributed Harper clusters in the cloud.
-
-- **[Apps, Templates & Components](https://github.com/topics/harper-app)**: Explore real projects built on Harper via the `harper-app` topic.
-
-- **[Harper Learn](https://github.com/HarperFast/harper-learn)**: Weekly video series + code following the journey from setup to real-world apps.
 
 ---
 
