@@ -29,7 +29,7 @@ AI tools are welcome, as long as you supervise them. Read the [Harper AI Policy]
 
 - **Describe the problem, your solution, the alternatives you weighed, and how you verified it.** The [PR template](https://github.com/HarperFast/.github/blob/main/PULL_REQUEST_TEMPLATE.md) has a section for each.
 - **Fill in the AI use section.** Name the AI tools you used, or "none". Add a `Reviewed with:` line saying which agents reviewed the change before you opened the PR, and how.
-- **Keep a few PRs open at a time.** Until you've had PRs merged in a repository, you can have up to 3 open PRs there at once. GitHub enforces this limit, and it lifts after your first 2 merged PRs. Some repositories set their own limits.
+- **Keep a few PRs open at a time.** Until you've had a PR merged in a repository, you can have up to 3 open PRs there at once. GitHub enforces this limit, and it lifts once your first PR in that repository merges. Some repositories set their own limits.
 
 Maintainers may close a PR without review when it looks unsupervised. Examples include PRs opened in bulk, PRs from bot or agent accounts, and PRs missing the AI use section.
 
