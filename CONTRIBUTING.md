@@ -35,7 +35,7 @@ Maintainers may close a PR without review when it looks unsupervised. Examples i
 
 ## Issues
 
-Issues are welcome, with or without AI help. To keep things manageable, please have no more than 20 open issues in a repository at once. Maintainers may close issues opened in bulk and block accounts that spam.
+Issues are welcome, with or without AI help. Maintainers may close issues opened in bulk and block accounts that spam.
 
 ## Code of Conduct
 
