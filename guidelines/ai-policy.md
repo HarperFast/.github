@@ -13,7 +13,9 @@ Use any AI tools you like. A contribution is supervised when a human:
 - has read it and understands it, and
 - answers for it in review.
 
-An agent may open a pull request from your account while you're running it, as long as you observe, review, or approve what it submits. If it opens a PR before you've read the change, keep the PR a draft until you have. Unattended agents and bot accounts must not open pull requests. Pointing an agent at our issue list and letting it open PRs on its own is not supervised, however good the output is. Automation that maintainers set up for a repository, such as Dependabot, isn't a contributor and isn't covered by this rule.
+An agent may open a pull request from your account while you're running it, as long as you observe, review, or approve what it submits. If it opens a PR before you've read the change, keep the PR a draft until you have. Outside contributors must not use unattended agents or bot accounts to open pull requests. Pointing an agent at our issue list and letting it open PRs on its own is not supervised, however good the output is.
+
+**Harper is the exception.** Harper may run bots and unattended agents in its own repositories, such as Dependabot or our internal agent tooling. We trust ourselves to use them responsibly, for the reasons in [How Harper engineers work](#how-harper-engineers-work). Outside contributors don't get that exception.
 
 ## How Harper engineers work
 
