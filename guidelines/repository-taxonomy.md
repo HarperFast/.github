@@ -20,7 +20,7 @@ The types defined here feed the [public repository policy](repository-policy.md)
 | **Example** | Read from it: a worked pattern you study and adapt | `agent-example-harper`, `full-page-caching`, `nextjs-example` | Tracks latest Harper | Integration/E2E with Harper latest |
 | **Guide** | Follow it: an example plus narrated Learn content (start → build → end) | `create-your-first-application`, `caching-guide-example` | Tracks latest Harper | Integration/E2E of the final state with Harper latest |
 | **Snapshot** | Companion app, example, or benchmark to a blog post, talk, or video | `twilio-sms`, `kafka-v-harper-perf-test` | Frozen | Optional, vs its pinned Harper version only |
-| **Meta** | Public, but supports the org rather than being consumed as a product | `.github`, `code-guidelines`, `ai-review-prompts`, `rocksdb-prebuilds`, `github-app` | Independent | Independent |
+| **Meta** | Public, but supports the org rather than being consumed as a product | `.github`, `code-guidelines`, `rocksdb-prebuilds`, `github-app` | Independent | Independent |
 
 ### Classification Decision Tree
 
