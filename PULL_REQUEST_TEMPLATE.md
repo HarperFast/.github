@@ -18,5 +18,5 @@
 
 <!-- See https://github.com/HarperFast/.github/blob/main/guidelines/ai-policy.md -->
 
-AI tools used: <!-- For example "Claude Opus 5.5", or "none" -->
+AI tools used: <!-- For example "Claude Opus 5.5" -->
 Reviewed with: <!-- Which agents reviewed this before you opened it, and how. For example "Claude subagent with fresh context; Codex" -->

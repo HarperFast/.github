@@ -35,7 +35,7 @@ Outside contributors don't have the same tools or the same relationship with us,
 These rules apply to everyone.
 
 - **Commits.** When AI wrote or substantially changed a commit, add a `Co-Authored-By` trailer naming the model. Use the trailer your tool documents, for example `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. If your tool documents none, use `Co-Authored-By: <model name>`.
-- **Pull request descriptions.** Descriptions may be AI-written. Every PR description says which AI tools were used, or "none", and what reviewed the change before it was opened. The [PR template](https://github.com/HarperFast/.github/blob/main/PULL_REQUEST_TEMPLATE.md) has a section for both. For Harper engineers, the attribution footer and review receipts our internal tooling adds to PR descriptions count as this disclosure.
+- **Pull request descriptions.** Descriptions may be AI-written, and they must say which AI tools were used to author, draft, and review the work. The [PR template](https://github.com/HarperFast/.github/blob/main/PULL_REQUEST_TEMPLATE.md) has a section for this. For Harper engineers, the attribution footer and review receipts our internal tooling adds to PR descriptions count as this disclosure.
 
 ## Pull request descriptions
 
