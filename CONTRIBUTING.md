@@ -22,7 +22,7 @@ AI tools are welcome, as long as you supervise them. Read the [Harper AI Policy]
 ## Before you open a pull request
 
 1. **Review it yourself.** Read the whole diff.
-2. **Have an AI agent review it.** At least one agent review is required, run with fresh context, separate from the session that wrote the change. A subagent with no prior context counts. More reviews are welcome, especially from other model families. For review guidance tuned to Harper, you can give your agent the prompts in [`HarperFast/ai-review-prompts`](https://github.com/HarperFast/ai-review-prompts), such as `universal.md` and `harper/common.md`.
+2. **Have an AI agent review it.** At least one agent review is required, run with fresh context, separate from the session that wrote the change. A subagent with no prior context counts. More reviews are welcome, especially from other model families.
 3. **Run the tests** the repository documents.
 
 ## Pull requests
