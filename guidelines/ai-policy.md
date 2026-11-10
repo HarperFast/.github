@@ -8,9 +8,9 @@ Harper is AI-forward. AI is welcome in our open source projects, as long as a hu
 
 Use any AI tools you like. A contribution is supervised when a human:
 
-- chose the work,
-- submits it from their own GitHub account, directly or through an agent they're running,
-- has read it and understands it, and
+- chooses the work,
+- submits it from their own GitHub account,
+- reads and understands it, and
 - answers for it in review.
 
 An agent may open a pull request from your account while you're running it, as long as you observe, review, or approve what it submits. If it opens a PR before you've read the change, keep the PR a draft until you have. Outside contributors must not use unattended agents or bot accounts to open pull requests. Pointing an agent at our issue list and letting it open PRs on its own is not supervised, however good the output is.
@@ -37,7 +37,7 @@ These rules apply to everyone.
 - **Commits.** When AI wrote or substantially changed a commit, add a `Co-Authored-By` trailer naming the model. Use the trailer your tool documents, for example `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. If your tool documents none, use `Co-Authored-By: <model name>`.
 - **Pull request descriptions.** Descriptions may be AI-written, and they must say which AI tools were used to author, draft, and review the work. The [PR template](https://github.com/HarperFast/.github/blob/main/PULL_REQUEST_TEMPLATE.md) has a section for this. For Harper engineers, the attribution footer and review receipts our internal tooling adds to PR descriptions count as this disclosure.
 
-## Pull request descriptions
+## PR Description Guidelines
 
 A good description states the problem, the solution, the alternatives you weighed (if any), and how you verified the change. Reviewers start there: it should let them judge the approach before they read the diff. Keep it short. AI tends toward verbosity, and every extra paragraph costs the reviewer time.
 
